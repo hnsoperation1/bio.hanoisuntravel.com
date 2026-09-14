@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getBioCard } from "@/lib/bio-card";
+import InAppBrowserNotice from "./InAppBrowserNotice";
 
 export async function generateMetadata({
   params,
@@ -47,6 +48,8 @@ export default async function BioCardPage({
         <h1 className="text-xl font-bold text-gray-900">{card.full_name}</h1>
         {card.job_title && <p className="text-sm text-gray-500 mt-1">{card.job_title}</p>}
         <p className="text-xs text-gray-400 mt-1">Hanoi Sun Travel</p>
+
+        <InAppBrowserNotice />
 
         <div className="mt-8 flex flex-col gap-3">
           <a
