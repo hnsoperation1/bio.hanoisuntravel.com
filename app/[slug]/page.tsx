@@ -57,7 +57,7 @@ export default async function BioCardPage({
             Lưu vào danh bạ
           </a>
 
-          {card.zalo_personal_link && (
+          {card.zalo_personal_link && /^https?:\/\//.test(card.zalo_personal_link) && (
             <a
               href={card.zalo_personal_link}
               target="_blank"
